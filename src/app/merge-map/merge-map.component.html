@@ -1,0 +1,23 @@
+<h2>.mergeMap() result </h2>
+<p>See <code>/app/shared/services/data.service.ts</code> for example code.</p>
+<p>We are looking for books by authorName here. But we only have an authorId, not a name.
+	<select [(ngModel)]="authorId" (ngModelChange)="setAuthorID()">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+	</select>
+</p>
+
+<pre>
+  {{ mergeMapData | json }}
+</pre>
+<hr>
+
+<div class="quote text-center">
+	"Only when the inner Observable emits, let me know by merging the value in to the outer Observable."
+</div>
+<p>Extra information:
+	<a href="https://www.learnrxjs.io/operators/transformation/mergemap.html">
+		https://www.learnrxjs.io/operators/transformation/mergemap.html
+	</a>
+</p>

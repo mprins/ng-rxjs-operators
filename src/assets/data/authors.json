@@ -1,0 +1,12 @@
+[
+  {
+	"name" : "Peter Kassenaar",
+	"id"   : 1,
+	"email": "info@kassenar.com"
+  },
+  {
+	"name"  : "Michiel de Rond",
+	"id": 2,
+	"email" : "michiel@phoenix-consultancy.nl"
+  }
+]

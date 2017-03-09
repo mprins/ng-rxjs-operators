@@ -1,0 +1,17 @@
+[
+  {
+	"title"   : "Web Development Library - TypeScript",
+	"author"  : "Peter Kassenaar",
+	"bookID"  : 1
+  },
+  {
+	"title"   : "Web Development Library - Angular",
+	"author"  : "Peter Kassenaar",
+	"bookID"  : 2
+  },
+  {
+	"title"   : "App Development Library - Android apps",
+	"author"  : "Michiel de Rond",
+	"bookID"  : 3
+  }
+]
