@@ -8,9 +8,13 @@ import {ConcatComponent} from "./concat/concat.component";
 import {MergeComponent} from "./merge/merge.component";
 import {MergeMapComponent} from "./merge-map/merge-map.component";
 import {Movie2Component} from "./movie2/movie2.component";
+import {MapComponent} from "./map/map.component";
+import {FilterComponent} from "./filter/filter.component";
 
 export const AppRoutes: Routes = [
-	{path: '', redirectTo: 'concat', pathMatch: 'full'},
+	{path: '', redirectTo: 'map', pathMatch: 'full'},
+	{path: 'map', component: MapComponent},
+	{path: 'filter', component: FilterComponent},
 	{path: 'concat', component: ConcatComponent},
 	{path: 'forkjoin', component: ForkJoinComponent},
 	{path: 'merge', component: MergeComponent},
@@ -20,6 +24,6 @@ export const AppRoutes: Routes = [
 	{
 		// catch all route
 		path      : '**',
-		redirectTo: 'concat'
+		redirectTo: 'map'
 	},
 ];

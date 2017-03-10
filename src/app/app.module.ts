@@ -20,6 +20,8 @@ import { ConcatComponent } from './concat/concat.component';
 import { MergeComponent } from './merge/merge.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
 import { Movie2Component } from './movie2/movie2.component';
+import { MapComponent } from './map/map.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
 	declarations: [
@@ -29,7 +31,9 @@ import { Movie2Component } from './movie2/movie2.component';
 		ConcatComponent,
 		MergeComponent,
 		MergeMapComponent,
-		Movie2Component
+		Movie2Component,
+		MapComponent,
+		FilterComponent
 	],
 	imports     : [
 		BrowserModule,
