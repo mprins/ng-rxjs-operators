@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-.quote{
-    font-size: xx-large;
-    font-weight :300;
-    font-style : italic;
-    padding: 0 10%;
+.quote {
+    font-size   : xx-large;
+    font-weight : 300;
+    font-style  : italic;
+    padding     : 0 10%;
 }
 
 .moviePoster {
-    max-width     : 100px;
+    width         : 100px;
     border        : 1px solid salmon;
     padding       : 4px;
     margin        : 4px;

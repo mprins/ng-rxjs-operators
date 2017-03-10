@@ -16,11 +16,11 @@
 		<div>
 			<input type="text"
 				   #keyword
-				   (keyup.enter)="searchMovies(keyword.value)"
+				   (keyup.enter)="searchMoviesWithDetails(keyword.value)"
 				   class="input-lg"
 				   placeholder="movie name...">
 			<button class="btn btn-primary"
-					(click)="searchMovies(keyword.value)">
+					(click)="searchMoviesWithDetails(keyword.value)">
 				Find movies
 			</button>
 			<button class="btn btn-success"

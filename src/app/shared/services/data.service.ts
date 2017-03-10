@@ -14,7 +14,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/concat';
 import 'rxjs/add/observable/merge';
 
-// constants that are used as pointers to random json-data
+// constants that are used as pointers to some json-data
 const BOOKS: string   = 'assets/data/books.json';
 const AUTHORS: string = 'assets/data/authors.json';
 
@@ -34,12 +34,12 @@ export class DataService {
 	getConcatData(): Observable<any> {
 		// First call. Simulate delay of 1 second
 		const authors = this.http.get(AUTHORS)
-			.delay(1000)
+			.delay(2000)
 			.map(res => res.json());
 
 		// Second call. Simulate delay of 2 seconds
 		const books = this.http.get(BOOKS)
-			.delay(2000)
+			.delay(1000)
 			.map(res => res.json());
 
 		// return the concatenated observable. It will always deliver first the results of the first call. No matter how long the delay.

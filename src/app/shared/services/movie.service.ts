@@ -15,7 +15,9 @@ export class MovieService {
 
 	}
 
-	// Used in Movie App: Return all movies, combined with movie details
+	// Used in Movie App: Return all movies, combined with movie details.
+	// This call has to wait until *all* subsequent http-calls for movie details have returnend.
+	// Only then the final object can be composed and returnd.
 	getMovies(keyword): Observable<any[]> {
 		return this.http.get(this.url + `s=${keyword}`)
 			.map(response => {
