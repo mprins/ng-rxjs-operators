@@ -22,6 +22,7 @@ import { MergeMapComponent } from './merge-map/merge-map.component';
 import { Movie2Component } from './movie2/movie2.component';
 import { MapComponent } from './map/map.component';
 import { FilterComponent } from './filter/filter.component';
+import { ScanComponent } from './scan/scan.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +34,8 @@ import { FilterComponent } from './filter/filter.component';
 		MergeMapComponent,
 		Movie2Component,
 		MapComponent,
-		FilterComponent
+		FilterComponent,
+		ScanComponent
 	],
 	imports     : [
 		BrowserModule,
