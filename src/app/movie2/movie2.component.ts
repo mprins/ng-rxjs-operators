@@ -13,17 +13,19 @@ export class Movie2Component {
 
 	}
 
-	// GOAL: I want to retrieve movie titles first, and then details for every movie in the list.
+	// GOAL: I want to retrieve movie titles first,
+    // and then details for every movie in the list.
+
 
 	// First Attempt: Simply search for movies and once movies are found,
 	// fire another request for details for every movie.
 	// Code smell: a subscribe-inside-a-subscribe block. But it works!
-	// searchMovies(keyword) {
+    // searchMoviesWithDetails(keyword) {
 	// 	this.movieService.getMoviesSimple(keyword)
 	// 		.subscribe(movies => {
 	// 			// get movie master values
 	// 			this.movies = movies;
-	//
+    //
 	// 			// get movie details. This should be combined w/ previous call
 	// 			this.movies.map(movie => {
 	// 				this.movieService.getMovieDetails(movie.imdbID)
@@ -37,7 +39,8 @@ export class Movie2Component {
 	// }
 
 	// Second attempt. Better, b/c only 1 subscribe-block at the bottom.
-	// Not perfect though, as I feel it is overly complicated with a .forkJoin() inside a .mergeMap().
+	// Not perfect though, as I feel it is overly complicated with a
+    // .forkJoin() inside a .mergeMap().
 	// Sincere question: Can this be optimized?
 	searchMoviesWithDetails(keyword) {
 		this.movieService.getMoviesSimple(keyword)

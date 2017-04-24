@@ -1,7 +1,7 @@
 // Angular Stuff
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 // Components
@@ -41,7 +41,8 @@ import { ScanComponent } from './scan/scan.component';
 		BrowserModule,
 		FormsModule,
 		HttpModule,
-		RouterModule.forRoot(AppRoutes)
+		RouterModule.forRoot(AppRoutes),
+        ReactiveFormsModule
 	],
 	providers   : [MovieService, DataService],
 	bootstrap   : [MainComponent]

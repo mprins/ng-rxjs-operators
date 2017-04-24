@@ -26,7 +26,9 @@ export class MovieService {
 			.mergeMap((movies: any[]) => {
 				if (movies) {
 					return Observable.forkJoin(
-						// loop over every movie in collection, get details (i.e. perform 10 additional requests and join them)
+						// loop over every movie in collection,
+                        // get details (i.e. perform 10 additional
+                        // requests and join them)
 						movies.map((movie: any) => {
 							return this.getMovieDetails(movie.imdbID)
 								.map(movieDetails => {

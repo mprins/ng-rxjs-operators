@@ -42,7 +42,8 @@ export class DataService {
 			.delay(1000)
 			.map(res => res.json());
 
-		// return the concatenated observable. It will always deliver first the results of the first call. No matter how long the delay.
+		// return the concatenated observable. It will always deliver
+        // first the results of the first call. No matter how long the delay.
 		return Observable.concat(authors, books);
 	}
 
@@ -88,8 +89,12 @@ export class DataService {
 	getMergeMapData(authorID: number = 0): Observable<any> {
 		// first http-call, outer observable.
 		return this.http.get(AUTHORS)
-			.map(res => res.json())
+			.map(response => {
+			    console.log(response);
+			    return response.json()
+            })
 			.map(authors => {
+			    console.log(authors);
 				// find the correct author, using the array .find() method
 				return authors.find((author: any) => author.id === authorID)
 			})
@@ -125,6 +130,7 @@ export class DataService {
 		return Observable.forkJoin(
 			// first call
 			this.http.get(AUTHORS)
+                .delay(3000)
 				.map(res => res.json()),
 			// second call
 			this.http.get(BOOKS)

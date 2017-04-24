@@ -9,6 +9,23 @@
 {{ cityData| json }}
 </pre>
 <hr>
+<h2>Dynamic filtering</h2>
+<h3>1. Reactive way: type a Character to filter on</h3>
+<input type="text" [formControl]="myFormControl"
+    class="input-lg">
+<pre>
+{{ cityDataReactive| json }}
+</pre>
+<hr>
+
+<h3>2. Template driven way: type a Character to filter on</h3>
+<input type="text" #modelCity
+       (keyup)="filterCities(modelCity.value)"
+       class="input-lg">
+<pre>
+{{ cityDataModel| json }}
+</pre>
+<hr>
 
 <div class="quote text-center">
 	"Emit only values that pass the provided condition"
