@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {Observable} from "rxjs/Observable";
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/catch';
@@ -9,7 +9,7 @@ import 'rxjs/add/observable/of'
 
 @Injectable()
 export class MovieService {
-	url: string = 'http://www.omdbapi.com/?';
+	url: string = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
 
 	constructor(private http: Http) {
 
@@ -27,8 +27,8 @@ export class MovieService {
 				if (movies) {
 					return Observable.forkJoin(
 						// loop over every movie in collection,
-                        // get details (i.e. perform 10 additional
-                        // requests and join them)
+						// get details (i.e. perform 10 additional
+						// requests and join them)
 						movies.map((movie: any) => {
 							return this.getMovieDetails(movie.imdbID)
 								.map(movieDetails => {
@@ -47,7 +47,7 @@ export class MovieService {
 
 	// Used in Movie App 2: return all movies, then look up movie details and return them also. Composing is done in the component
 	getMoviesSimple(keyword): Observable<any> {
-		const movies =  this.http.get(this.url + `s=${keyword}`)
+		const movies = this.http.get(this.url + `s=${keyword}`)
 			.map(response => response.json().Search);
 
 		// Problem : I want to look up details for every movie
