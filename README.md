@@ -1,11 +1,11 @@
 # ng-rxjs-operators
 Examples of using different RxJS operators in an Angular CLI-project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
+This project was updated to be used with Angular 7.x+ and RxJS 6.x+ (using pipeable operators).
 
-## TODO
-- update to a more recent version of Angular
-- update to RxJS 5.5+, using lettable operators
+## Roadmap
+- <strike>update to a more recent version of Angular</strike>
+- <strike>update to RxJS 5.5+, using lettable operators</strike>
 - add additional operators
 
 ## Installation
