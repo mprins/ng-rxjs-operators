@@ -2,7 +2,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 // Components
 import {MainComponent} from './main/main.component';
@@ -40,7 +40,7 @@ import { ScanComponent } from './scan/scan.component';
 	imports     : [
 		BrowserModule,
 		FormsModule,
-		HttpModule,
+		HttpClientModule,
 		RouterModule.forRoot(AppRoutes),
         ReactiveFormsModule
 	],
