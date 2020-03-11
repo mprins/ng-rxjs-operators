@@ -11,12 +11,6 @@ import {concat, forkJoin, merge, Observable, of} from "rxjs";
 // NEW (rxjs 6.x+)
 import {map, mergeMap, catchError, delay, tap} from "rxjs/operators";
 
-// Observable stuff
-// import 'rxjs/add/observable/forkJoin';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/observable/concat';
-// import 'rxjs/add/observable/merge';
-
 // constants that are used as pointers to some json-data
 const BOOKS: string = 'assets/data/books.json';
 const AUTHORS: string = 'assets/data/authors.json';

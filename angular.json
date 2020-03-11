@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "ngx-rxjs-operators"
+  "defaultProject": "ngx-rxjs-operators",
+  "cli": {
+    "analytics": "681d8eae-2795-4d7b-a808-fc6573924dfc"
+  }
 }

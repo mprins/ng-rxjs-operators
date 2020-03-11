@@ -3,8 +3,8 @@
 		<h1>Getting movies and details via .forkJoin()</h1>
 		<p>This function does multiple things: </p>
 		<ul>
-			<li>First http-call: look up a series of movies, based on general movie name (=keyword).</li>
-			<li>Second http-call: look up movie details for each movie, based on the movieId that is now available.</li>
+			<li>First http-call: look up a series of movies, based on general movie name (e.g. <code>keyword</code>).</li>
+			<li>Second http-call: look up movie details for each movie, based on the <code>movieId</code> that is now available.</li>
 			<li>Merge the data to the movies-object. A combination of <code>.flatMap()</code> and
 				<code>.forkJoin()</code> is used.
 			</li>
