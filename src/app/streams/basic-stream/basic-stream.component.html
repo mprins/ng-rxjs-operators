@@ -1,0 +1,18 @@
+<div>
+  <label for="text1">
+    <p>Basic stream: we subscribe to chars coming from the textbox:</p>
+    <input class="form-control-lg" type="text" #text1
+           id="text1" placeholder="Text as a stream">
+  </label>
+  <p>{{ textStream1 }}</p>
+</div>
+<div>
+  <button #btnRight class="btn btn-secondary">Right</button>
+  Mario is moved by observable streams from the button click.
+  <div>
+    <img id="mario" #mario
+         [style.left]="position.x + 'px'"
+         [style.right]="position.y + 'px'"
+         src="../assets/img/mario-1.png" alt="Mario">
+  </div>
+</div>

@@ -1,7 +1,7 @@
 # ng-rxjs-operators
 Examples of using different RxJS operators in an Angular CLI-project
 
-This project was updated to be used with Angular 7.x+ and RxJS 6.x+ (using pipeable operators).
+This project was updated to be used with Angular 9.x+ (ivy compiler) and RxJS 6.x+ (using pipeable operators).
 
 ## Roadmap
 - <strike>update to a more recent version of Angular</strike>

@@ -24,6 +24,10 @@ import {MapComponent} from './map/map.component';
 import {FilterComponent} from './filter/filter.component';
 import {ScanComponent} from './scan/scan.component';
 import {ProgressiveEnhancementComponent} from './progressive-data-enhancement/progressive.enhancement/progressive.enhancement.component';
+import { BasicStreamComponent } from './streams/basic-stream/basic-stream.component';
+import { MultipleStreamComponent } from './streams/multiple-stream/multiple-stream.component';
+import { DragDropStreamComponent } from './streams/drag-drop-stream/drag-drop-stream.component';
+import { TypeaheadStreamComponent } from './streams/typeahead-stream/typeahead-stream.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import {ProgressiveEnhancementComponent} from './progressive-data-enhancement/pr
     MapComponent,
     FilterComponent,
     ScanComponent,
-    ProgressiveEnhancementComponent
+    ProgressiveEnhancementComponent,
+    BasicStreamComponent,
+    MultipleStreamComponent,
+    DragDropStreamComponent,
+    TypeaheadStreamComponent
   ],
   imports: [
     BrowserModule,

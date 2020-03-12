@@ -1,0 +1,5 @@
+#mario{
+  position: relative;
+  border: 1px solid red;
+  cursor: pointer;
+}
