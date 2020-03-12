@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MovieService} from "../shared/services/movie.service";
+import {MovieService} from "../../shared/services/movie.service";
 import {Observable} from "rxjs";
 
 @Component({

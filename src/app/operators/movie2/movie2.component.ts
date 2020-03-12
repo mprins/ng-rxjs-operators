@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieService} from "../shared/services/movie.service";
+import {MovieService} from "../../shared/services/movie.service";
 import {forkJoin, Observable, of} from "rxjs";
 import {delay, mergeMap} from "rxjs/operators";
 

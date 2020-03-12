@@ -9,21 +9,22 @@ import {MultipleStreamComponent} from './streams/multiple-stream/multiple-stream
 import {DragDropStreamComponent} from './streams/drag-drop-stream/drag-drop-stream.component';
 
 // Operators
-import {MovieComponent} from './movie/movie.component';
-import {ForkJoinComponent} from './fork-join/fork-join.component';
-import {ConcatComponent} from './concat/concat.component';
-import {MergeComponent} from './merge/merge.component';
-import {MergeMapComponent} from './merge-map/merge-map.component';
-import {Movie2Component} from './movie2/movie2.component';
-import {MapComponent} from './map/map.component';
-import {FilterComponent} from './filter/filter.component';
-import {ScanComponent} from './scan/scan.component';
-import {ProgressiveEnhancementComponent} from './progressive-data-enhancement/progressive.enhancement/progressive.enhancement.component';
+import {MovieComponent} from './operators/movie/movie.component';
+import {ForkJoinComponent} from './operators/fork-join/fork-join.component';
+import {ConcatComponent} from './operators/concat/concat.component';
+import {MergeComponent} from './operators/merge/merge.component';
+import {MergeMapComponent} from './operators/merge-map/merge-map.component';
+import {Movie2Component} from './operators/movie2/movie2.component';
+import {MapComponent} from './operators/map/map.component';
+import {FilterComponent} from './operators/filter/filter.component';
+import {ScanComponent} from './operators/scan/scan.component';
+import {ProgressiveEnhancementComponent} from './operators/progressive-data-enhancement/progressive.enhancement/progressive.enhancement.component';
 import {TypeaheadStreamComponent} from './streams/typeahead-stream/typeahead-stream.component';
 
 export const AppRoutes: Routes = [
-  {path: '', redirectTo: 'map', pathMatch: 'full'},
-  // streams
+  // homepage
+  {path: '', redirectTo: 'stream', pathMatch: 'full'},
+  // basic streams
   {path: 'stream', component: BasicStreamComponent},
   {path: 'stream-multiple', component: MultipleStreamComponent},
   {path: 'drag-drop', component: DragDropStreamComponent},

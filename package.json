@@ -1,9 +1,14 @@
 {
   "name": "ngx-rxjs-operators",
-  "version": "0.0.0",
+  "version": "0.0.8",
+  "author": {
+    "email": "info@kassenaar.com",
+    "name": "Peter Kassenaar",
+    "url": "https://www.kassenaar.com"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open --aot=false --optimization=false",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

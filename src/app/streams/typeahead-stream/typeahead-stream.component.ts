@@ -24,6 +24,7 @@ export class TypeaheadStreamComponent implements OnInit {
 
   @ViewChild('typeahead', {static: true}) typeahead;
   countries$: Observable<ICountry[]>;
+  numResults$: Observable<number>;
 
   constructor(private http: HttpClient) {
   }
