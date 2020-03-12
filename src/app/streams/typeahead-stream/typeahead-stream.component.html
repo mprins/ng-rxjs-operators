@@ -1,4 +1,14 @@
 <h4>An autocomplete/typeahead demo</h4>
-<input type="text" placeholder="type a continent" #typeahead class="form-control-lg">
-<hr />
-<div id="output"></div>
+<!--Get the keyword, the class is subscribed to this inputbox-->
+<input type="text" placeholder="Country name..." #typeahead class="form-control-lg">
+<hr/>
+<!--Results-->
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let country of countries$ | async ">
+    <img src="{{ country.flag }}" alt="" width="80" style="float: left">
+    <p>
+      <strong>{{ country.name}}</strong><br>
+      {{ country.capital }}
+    </p>
+  </li>
+</ul>
