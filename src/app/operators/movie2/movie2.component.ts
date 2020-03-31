@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieService} from "../../shared/services/movie.service";
-import {forkJoin, Observable, of} from "rxjs";
-import {delay, mergeMap} from "rxjs/operators";
+import {MovieService} from '../../shared/services/movie.service';
+import {forkJoin, Observable, of} from 'rxjs';
+import {delay, mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'movie2',
@@ -54,12 +54,12 @@ export class Movie2Component {
               // 2. Loop over every movie in collection, get details (i.e. perform 10 additional requests and join them)
               // 3. I would LIKE to have a function here that emits as soon as one detailObject for a movie is fetched.
               movies.map((movie: any) => {
-                return this.movieService.getMovieDetails(movie.imdbID)
+                return this.movieService.getMovieDetails(movie.imdbID);
               })
-            )
+            );
           } else {
             // 4. no movies found with this keyword. Return empty array
-            return of([])
+            return of([]);
           }
         }),
         delay(2000)// 5. simulate delay
@@ -69,7 +69,7 @@ export class Movie2Component {
         // I would like to do this on a movie-by-movie base, instead of retrieving an array w/ 10 movieDetail
         // objects. See also 3.)
         movieDetails.forEach(detailObject => {
-          let currentMovie = this.movies.find(movie => movie.imdbID === detailObject.imdbID);
+          const currentMovie = this.movies.find(movie => movie.imdbID === detailObject.imdbID);
           currentMovie.details = detailObject;
         });
       });

@@ -146,10 +146,10 @@ export class DataService {
         map((data: any[]) => {
           // data is now an array with 2 objects, b/c we did 2 http-calls.
           // First result, from the http-call to AUTHORS
-          let author: any = data[0][0]; // Get just first author from file. We could do more sophisticated search/filter here.
+          const author: any = data[0][0]; // Get just first author from file. We could do more sophisticated search/filter here.
 
           // Second result, from the http-call to BOOKS
-          let books: any[] = data[1];
+          const books: any[] = data[1];
 
           // Compose result, in this case adding the books to the extracted author.
           author.books = books.filter(book => book.author === author.name);
@@ -157,6 +157,4 @@ export class DataService {
         })
       );
   }
-
-
 }

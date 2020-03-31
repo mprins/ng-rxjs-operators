@@ -1,26 +1,26 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../../shared/services/data.service";
+import {DataService} from '../../shared/services/data.service';
 
 @Component({
-	selector   : 'merge-map',
-	templateUrl: './merge-map.component.html'
+  selector: 'merge-map',
+  templateUrl: './merge-map.component.html'
 })
 export class MergeMapComponent implements OnInit {
 
-	authorId:string = '0';
-	mergeMapData: any[] = [];
+  authorId = 0;
+  mergeMapData: any[] = [];
 
-	constructor(private dataService: DataService) {
-	}
+  constructor(private dataService: DataService) {
+  }
 
-	ngOnInit() {
+  ngOnInit() {
 
-	}
+  }
 
-	setAuthorID(){
-		this.dataService.getMergeMapData(parseInt(this.authorId))
-			.subscribe((result: any) => {
-				this.mergeMapData = result;
-			})
-	}
+  setAuthorID() {
+    this.dataService.getMergeMapData(+this.authorId)
+      .subscribe((result: any) => {
+        this.mergeMapData = result;
+      });
+  }
 }

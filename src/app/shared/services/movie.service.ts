@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {forkJoin, merge, Observable, of} from "rxjs";
-import {map, mergeMap} from "rxjs/operators";
+import {forkJoin, merge, Observable, of} from 'rxjs';
+import {map, mergeMap} from 'rxjs/operators';
 
 // OLD:
 // import 'rxjs/add/operator/map';
@@ -12,7 +12,7 @@ import {map, mergeMap} from "rxjs/operators";
 
 @Injectable()
 export class MovieService {
-  url: string = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
+  url = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
 
   constructor(private http: HttpClient) {
 
@@ -41,15 +41,15 @@ export class MovieService {
                       movie.details = movieDetails;
                       return movie;
                     })
-                  )
+                  );
               })
-            )
+            );
           } else {
             // no movies found with this keyword. Return empty array
-            return of([])
+            return of([]);
           }
         })
-      )
+      );
   }
 
   // Used in Movie App 2: return all movies, then look up movie details and return them also. Composing is done in the component
@@ -68,6 +68,6 @@ export class MovieService {
 
   // Helper function
   getMovieDetails(id: string): Observable<any> {
-    return this.http.get<any>(this.url + `i=${id}`)
+    return this.http.get<any>(this.url + `i=${id}`);
   }
 }
