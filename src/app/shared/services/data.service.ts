@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {concat, forkJoin, merge, Observable, of} from "rxjs";
+import {concat, forkJoin, merge, Observable, of} from 'rxjs';
 
 // Operator stuff
 // OLD:
@@ -9,11 +9,11 @@ import {concat, forkJoin, merge, Observable, of} from "rxjs";
 // import 'rxjs/add/operator/catch';
 // import 'rxjs/add/operator/delay';
 // NEW (rxjs 6.x+)
-import {map, mergeMap, catchError, delay, tap} from "rxjs/operators";
+import {map, mergeMap, catchError, delay, tap} from 'rxjs/operators';
 
 // constants that are used as pointers to some json-data
-const BOOKS: string = 'assets/data/books.json';
-const AUTHORS: string = 'assets/data/authors.json';
+const BOOKS = 'assets/data/books.json';
+const AUTHORS = 'assets/data/authors.json';
 
 @Injectable()
 export class DataService {
@@ -49,8 +49,10 @@ export class DataService {
 
   /** merge-operator
    *
-   * The .merge() operator turns multiple observables into a single observable. The results are delivered
-   * to the subscriber as soon as one of the observables completes. Use this operator if order is not important.
+   * The .merge() operator turns multiple observables into a single observable.
+   * The results are delivered to the subscriber as soon as one
+   * of the observables completes.
+   * Use this operator if order is not important.
    *
    * @returns {Observable<any>}
    */
@@ -69,7 +71,7 @@ export class DataService {
       );
 
 
-    // return the merged observable.
+    // return the merged observable. BOOKS will be delivered first
     return merge(authors, books);
   }
 
@@ -98,7 +100,7 @@ export class DataService {
         map((authors: any[]) => {
           console.log(authors);
           // find the correct author, using the array .find() method
-          return authors.find((author: any) => author.id === authorID)
+          return authors.find((author: any) => author.id === authorID);
         }),
         mergeMap((author: any) => {
           if (author) {
@@ -106,8 +108,8 @@ export class DataService {
             return this.http.get(BOOKS)
               .pipe(map((books: any[]) => {
                 // filter books, bases on authorname we found earlier.
-                return books.filter((book: any) => book.author === author.name)
-              }))
+                return books.filter((book: any) => book.author === author.name);
+              }));
 
 
           } else {
@@ -115,7 +117,7 @@ export class DataService {
             return of([]);
           }
         })
-      )
+      );
   }
 
 
@@ -153,7 +155,7 @@ export class DataService {
           author.books = books.filter(book => book.author === author.name);
           return author;
         })
-      )
+      );
   }
 
 

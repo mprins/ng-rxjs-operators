@@ -31,6 +31,6 @@ export class ScanComponent implements OnInit {
         startWith(0),
         scan((acc, curr) => acc + curr)
       )
-      .subscribe(result => this.scanData.push(result))
+      .subscribe(result => this.scanData.push(result));
   }
 }

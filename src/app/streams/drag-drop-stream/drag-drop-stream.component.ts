@@ -16,7 +16,7 @@ export class DragDropStreamComponent implements OnInit {
   ngOnInit(): void {
     // correction factor for image and current page. Your mileage may vary!
     const OFFSET_X = 180;
-    const OFFSET_Y = 280;
+    const OFFSET_Y = 400;
     // 1. With Drag and drop, first you capture the mousedown event
     const down$ = fromEvent(document, 'mousedown');
 
@@ -34,6 +34,7 @@ export class DragDropStreamComponent implements OnInit {
     // 4. extend the down$ stream and subscribe
     down$
       .pipe(
+        startWith(this.position),
         // IF the down$-event happened, we ar no longer interested in it. Instead,
         // we switch the focus to the move$ event.
         // switchMap(event => move$),
@@ -41,8 +42,7 @@ export class DragDropStreamComponent implements OnInit {
         // So we add *another* pipe and use the takeUntil() operator.
         switchMap(event => move$.pipe(
           takeUntil(up$)
-        )),
-        startWith(this.position)
+        ))
       )
       .subscribe(result => this.position = result);
   }

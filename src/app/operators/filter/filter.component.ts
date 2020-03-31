@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {from} from "rxjs";
-import {filter} from 'rxjs/operators'
-import {FormControl} from "@angular/forms";
+import {from, Observable} from 'rxjs';
+import {filter} from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'filter',
@@ -14,7 +14,7 @@ export class FilterComponent implements OnInit {
   cityDataReactive: string[] = [];
   cityDataModel: string[] = [];
   myFormControl: FormControl;
-  modelDrivenCities: any;
+  modelDrivenCities: Observable<string>;
 
 
   constructor() {
@@ -38,7 +38,7 @@ export class FilterComponent implements OnInit {
       'Nieuwegein'
     ]);
 
-    // .filter() - only emit values that pass the provided condition.
+    // filter() - only emit values that pass the provided condition.
     // In this case: only even numbers are passed through.
     source.pipe(
       filter(val => val % 2 === 0)
@@ -46,7 +46,8 @@ export class FilterComponent implements OnInit {
       .subscribe(result => this.filterData.push(result));
 
     // Emit only the cities that starts with an 'H'.
-    // Exercise: make this dynamic:
+    // *******************
+    // Workshop - make this dynamic:
     // Create a textbox or dropdownlist in the UI so the user can decide which character to filter on.
     sourceCities.pipe(filter(city => city.startsWith('H')))
       .subscribe(result => this.cityData.push(result));
@@ -59,8 +60,8 @@ export class FilterComponent implements OnInit {
       sourceCities.pipe(
         filter((city: string) => city.toUpperCase().startsWith(val.toUpperCase()))
       )
-        .subscribe(result => this.cityDataReactive.push(result))
-    })
+        .subscribe(result => this.cityDataReactive.push(result));
+    });
   }
 
   // Dynamic filtering - The Template Driven way.
@@ -68,7 +69,9 @@ export class FilterComponent implements OnInit {
   filterCities(value) {
     this.cityDataModel = [];
     this.modelDrivenCities
-      .filter(city => city.toUpperCase().startsWith(value.toUpperCase()))
+      .pipe(
+        filter(city => city.toUpperCase().startsWith(value.toUpperCase()))
+      )
       .subscribe(result => this.cityDataModel.push(result));
   }
 }
