@@ -20,6 +20,7 @@ import {FilterComponent} from './operators/filter/filter.component';
 import {ScanComponent} from './operators/scan/scan.component';
 import {ProgressiveEnhancementComponent} from './operators/progressive-data-enhancement/progressive.enhancement/progressive.enhancement.component';
 import {TypeaheadStreamComponent} from './streams/typeahead-stream/typeahead-stream.component';
+import {Movie3Component} from "./operators/movie3/movie3.component";
 
 export const AppRoutes: Routes = [
   // homepage
@@ -40,6 +41,7 @@ export const AppRoutes: Routes = [
   {path: 'mergemap', component: MergeMapComponent},
   {path: 'movie', component: MovieComponent},
   {path: 'movie2', component: Movie2Component},
+  {path: 'movie3', component: Movie3Component},
   {path: 'progressive', component: ProgressiveEnhancementComponent},
   {
     // catch all route

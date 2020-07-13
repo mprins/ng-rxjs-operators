@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Movie 3</h1>
+    <p>This function does multiple things: </p>
+    <ul>
+      <li>First http-call: look up a series of movies, based on general movie name (=keyword).</li>
+      <li>Second series of http-calls: look up movie details for each movie, based on the movieId that is now
+        available.
+      </li>
+      <li>Merge the data to the movies-object. Here the static <code>combineLatest()</code> operator is used.
+      </li>
+      <li>This Observable <em>only</em> emits once all http-calls are complete and the final object is composed. So this
+        behavior is basically the same as with the <code>.forkJoin()</code> operator.
+      </li>
+      <li>
+        Use a store/<code>Subject</code> if you want to show results as they come in. That way you can add
+        <code>.next()</code> items to your object.
+      </li>
+    </ul>
+    <p>See <code>/app/operators/movie3/movie.component.ts</code> for example code.</p>
+    <p>Based on the Open Movie Database API, at <a href="http://www.omdbapi.com/">www.omdbapi.com</a></p>
+    <div>
+      <input type="text"
+             #keyword
+             (keyup.enter)="searchMovies3(keyword.value)"
+             class="form-control-lg"
+             placeholder="movie name...">
+      <button class="btn btn-primary"
+              (click)="searchMovies3(keyword.value)">
+        Find movies
+      </button>
+            <button class="btn btn-success"
+                    (click)="clear()">
+              Clear
+            </button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <table class="table table-striped">
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Some details</th>
+      </tr>
+      <tr *ngFor="let movie of movie$ | async">
+        <td>
+          <img *ngIf="movie.Poster !== 'N/A' "
+               src="{{movie.Poster}}"
+               class="moviePoster"
+               [title]="'poster for ' + movie.Title"
+               [alt]="'poster for ' + movie.Title">
+        </td>
+        <td>
+          <strong>{{ movie.Title }}</strong>,
+        </td>
+        <td>
+          <p>imdbID: {{ movie.imdbID }}</p>
+          <p>Featuring: {{ movie.Actors }}</p>
+          <p>Released : {{movie.Released}}</p>
+          <h3>Plot</h3>
+          <p *ngIf="movie.Plot else loading"><code>{{ movie.Plot }}</code></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<ng-template #loading>
+  <img src="assets/spinner.gif" alt="Loading...">
+</ng-template>

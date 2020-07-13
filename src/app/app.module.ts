@@ -28,6 +28,7 @@ import { BasicStreamComponent } from './streams/basic-stream/basic-stream.compon
 import { MultipleStreamComponent } from './streams/multiple-stream/multiple-stream.component';
 import { DragDropStreamComponent } from './streams/drag-drop-stream/drag-drop-stream.component';
 import { TypeaheadStreamComponent } from './streams/typeahead-stream/typeahead-stream.component';
+import { Movie3Component } from './operators/movie3/movie3.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TypeaheadStreamComponent } from './streams/typeahead-stream/typeahead-s
     BasicStreamComponent,
     MultipleStreamComponent,
     DragDropStreamComponent,
-    TypeaheadStreamComponent
+    TypeaheadStreamComponent,
+    Movie3Component
   ],
   imports: [
     BrowserModule,
