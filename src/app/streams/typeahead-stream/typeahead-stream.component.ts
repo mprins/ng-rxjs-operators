@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {catchError, debounceTime, distinctUntilChanged, filter, map, switchMap} from 'rxjs/operators';
+import {catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap} from 'rxjs/operators';
 import {fromEvent, Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
@@ -50,7 +50,7 @@ export class TypeaheadStreamComponent implements OnInit {
     // 7. Create the actual http-call.
     // We could/should store the http-address in a
     // separate variable, this method inside a service, and so on.
-    return this.http.get<ICountry[]>(`https://restcountries.eu/rest/v2/name/${keyword}?fields=name;capital;flag`)
+    return this.http.get<ICountry[]>(`https://restcountries.com/v2/name/${keyword}`)
       .pipe(
         // 8. catch http-errors and return a 'not found' country
         catchError(err => {
